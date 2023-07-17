@@ -1,0 +1,23 @@
+{
+  "name": "triochallenge",
+  "version": "1.0.0",
+  "description": "Trio coding assesment solved using Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonangeli/triochallenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonangeli/triochallenge/issues"
+  },
+  "homepage": "https://github.com/leonangeli/triochallenge#readme",
+  "dependencies": {
+    "cypress": "^12.17.1"
+  }
+}
