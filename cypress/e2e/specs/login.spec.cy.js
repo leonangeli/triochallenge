@@ -1,7 +1,19 @@
 /// <reference types = "cypress" />
 
+import landingPage from "../pages/landing-page"
+import loginPage from "../pages/login-page"
+
 describe('Login tests', () => {
-  it('Logins succesfully with valid credentials', () => {
-    cy.visit('https://www.microapp.io/')
+  const ln = new loginPage()
+  const lp = new landingPage()
+
+  beforeEach(() => {
+    ln.navigateLogin()
+  })
+
+  it('Successful login with valid credentials', () => {
+    ln.setUsername('leonangelitrio')
+    ln.setPassword('Leonangeli123!')
+    lp.validateSuccessfulLogin()
   })
 })
