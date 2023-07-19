@@ -1,9 +1,11 @@
+import customcomponentPage from "../pages/customcomponent-page"
 import landingPage from "../pages/landing-page"
 import loginPage from "../pages/login-page"
 
 describe('Menu Navigation Test', () => {
     const ln = new loginPage()
     const lp = new landingPage()
+    const cp = new customcomponentPage()
     it('should navigate through all menu items', () => {
         //Login
         ln.interceptLogin()
@@ -16,13 +18,12 @@ describe('Menu Navigation Test', () => {
 
        lp.validateSuccessfulLogin()
        
-       //Navigation 
-       lp.logoNavbarClick()
-       lp.appsNavbarClick()
-       lp.aboutNavbarClick()
-       lp.workspaceDropdownClick('leonangeli@trio.com')
-       lp.userProfileDropdownClick('leonangeli@trio.com')
-       lp.searchInputNavbar('calculator','Age Calculator')
+       //Custom Component creation 
+       lp.logoNavbarClick();
+       lp.customComponentClick();
+       cp.typePrompt('A macro nutrient calculator');
+       cp.makeMagicClick();
+       cp.validateSuccessfulComponentCreation();
 
     })
 

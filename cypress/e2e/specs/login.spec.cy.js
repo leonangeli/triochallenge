@@ -6,6 +6,7 @@ describe('Login Test', () => {
     const ln = new loginPage()
     const lp = new landingPage()
 
+    //Login
     it('should intercept and login succesfully', () => {
         ln.interceptLogin()
         

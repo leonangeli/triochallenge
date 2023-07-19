@@ -48,5 +48,10 @@ export default class landingPage {
         //cy.should('eq',string2).click({force: true})
     }
 
+    customComponentClick(){
+        cy.get('.mantine-1ryt1ht > .mantine-Text-root').click({force: true})
+        cy.url().should('include', 'https://www.microapp.io/apps/ai-component-generator')
+    }
+
 
 }

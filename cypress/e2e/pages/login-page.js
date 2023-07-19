@@ -9,7 +9,7 @@ export default class loginPage{
     }
     
     signUp(){
-        cy.contains('Sign up').click();
+        cy.contains('Sign up').click({force: true});
     }
     
     setUsername(username){
