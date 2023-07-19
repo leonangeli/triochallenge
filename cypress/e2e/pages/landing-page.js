@@ -15,19 +15,38 @@ export default class landingPage {
 
     logoNavbarClick(){
         cy.get('a > img').click()
+        cy.url().should('eq', 'https://www.microapp.io/')
     }
 
     appsNavbarClick(){
         cy.get('[href="/apps"] > .mantine-Text-root').click()
+        cy.url().should('eq', 'https://www.microapp.io/apps')
     }
 
     aboutNavbarClick(){
         cy.contains('About').click()
+        cy.url().should('eq', 'https://www.microapp.io/about')
     }
 
-    searchInputNavbar(string){
-        cy.get(':nth-child(2) > .mantine-Input-wrapper > .mantine-Input-input').type(string,'{enter}')
+    workspaceDropdownClick(username){
+        cy.contains(username).click()
+        cy.get('[href="/workspace"]').click()
+        cy.url().should('eq', 'https://www.microapp.io/workspace')
     }
-    
+
+    userProfileDropdownClick(username){
+        cy.contains(username).click()
+        cy.get('[href="/user/64b6e4a19ef2901040036efb"]').click()
+        cy.url().should('include', 'https://www.microapp.io/user')
+
+    }
+
+    searchInputNavbar(string1, string2){
+        cy.get('a > img').click()
+        cy.wait(4000)
+        cy.get(':nth-child(2) > .mantine-Input-wrapper > .mantine-Input-input').type(string1,'{enter}')
+        //cy.should('eq',string2).click({force: true})
+    }
+
 
 }

@@ -18,7 +18,9 @@ describe('Menu Navigation Test', () => {
        lp.logoNavbarClick()
        lp.appsNavbarClick()
        lp.aboutNavbarClick()
-       lp.searchInputNavbar('calculator')
+       lp.workspaceDropdownClick('leonangeli@trio.com')
+       lp.userProfileDropdownClick('leonangeli@trio.com')
+       lp.searchInputNavbar('calculator','Age Calculator')
 
 
     })

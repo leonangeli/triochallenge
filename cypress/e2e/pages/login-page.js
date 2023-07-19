@@ -3,7 +3,7 @@
 export default class loginPage{
     interceptLogin(){
         cy.intercept('https://microappai.us.auth0.com/u/login?state=*').as('auth0Authorize')
-        cy.visit('https://www.microapp.io/build')
+        cy.visit('https://www.microapp.io/')
         cy.wait(3009)
         cy.get('[href="/api/auth/login"').eq(0).click()
     }
