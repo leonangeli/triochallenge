@@ -10,7 +10,23 @@ export default class landingPage {
     }
 
     validateSuccessfulLogin(){
-        cy.get('[class="mantine-Text-root mantine-gc4o2k"]').should('have.text', 'leonangeli@trio.com')
+        cy.url().should('eq', 'https://www.microapp.io/workspace')
+    }
+
+    logoNavbarClick(){
+        cy.get('a > img').click()
+    }
+
+    appsNavbarClick(){
+        cy.get('[href="/apps"] > .mantine-Text-root').click()
+    }
+
+    aboutNavbarClick(){
+        cy.contains('About').click()
+    }
+
+    searchInputNavbar(string){
+        cy.get(':nth-child(2) > .mantine-Input-wrapper > .mantine-Input-input').type(string,'{enter}')
     }
     
 

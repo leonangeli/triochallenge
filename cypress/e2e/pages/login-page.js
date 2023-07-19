@@ -1,8 +1,11 @@
 /// <reference types = "cypress" />
 
 export default class loginPage{
-    navigateLogin(){
-        cy.visit('https://microappai.us.auth0.com')
+    interceptLogin(){
+        cy.intercept('https://microappai.us.auth0.com/u/login?state=*').as('auth0Authorize')
+        cy.visit('https://www.microapp.io/build')
+        cy.wait(3009)
+        cy.get('[href="/api/auth/login"').eq(0).click()
     }
     
     signUp(){
@@ -16,5 +19,7 @@ export default class loginPage{
     setPassword(password){
         cy.get('input[id="password"]').type(password)
     }
+
+
 
 }
