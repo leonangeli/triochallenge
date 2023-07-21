@@ -7,7 +7,7 @@ describe('Login Test', () => {
     const lp = new landingPage()
 
     //Login
-    it('should intercept and login succesfully', () => {
+    it('should intercept and login with valid credentials', () => {
         ln.interceptLogin()
         
         cy.origin('https://microappai.us.auth0.com', () => {
@@ -17,7 +17,18 @@ describe('Login Test', () => {
        })
 
        lp.validateSuccessfulLogin()
+    })
 
+    it('should intercept and login with invalid credentials', () => {
+        ln.interceptLogin()
+        
+        cy.origin('https://microappai.us.auth0.com', () => {
+            cy.get('input[id="username"]').type('$#@$@@$$#@%%^^');
+            cy.get('input[id="password"]').type('wrongpass');
+            cy.contains('Continue').click({force: true});
+            cy.contains('Wrong username or password').should('be.visible')
+       })
+       
     })
 
 })

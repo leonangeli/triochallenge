@@ -20,6 +20,4 @@ export default class loginPage{
         cy.get('input[id="password"]').type(password)
     }
 
-
-
 }
