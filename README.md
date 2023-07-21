@@ -21,4 +21,5 @@ Configuration
 * cypress.env.json: Environment-specific variables.
 Reporting Test results and reports will be automatically generated and stored in the cypress/reports directory.
 We welcome feedback and contributions from the team. If you find any issues or have suggestions for improvement, please create a new issue or pull request. Happy testing! 🚀
+
 Agustin Leonangeli
